@@ -10,7 +10,7 @@ class CategoriesScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Meal'),
-        leading: Icon(Icons.restaurant),
+        leading: const Icon(Icons.restaurant),
       ),
       body: GridView(
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
@@ -23,7 +23,7 @@ class CategoriesScreen extends StatelessWidget {
         children: DUMMY_CATEGORIES
             .map(
               (catData) =>
-                  CtegoryItem(catData.id, catData.title, catData.color),
+                  CategoryItem(catData.id, catData.title, catData.color),
             )
             .toList(),
       ),
