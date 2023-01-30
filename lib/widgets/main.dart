@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal_app/screens/categories_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -10,9 +11,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        canvasColor: const Color.fromRGBO(255, 254, 229, 1),
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.pink)
+            .copyWith(secondary: Colors.amber),
+        textTheme: ThemeData.light().textTheme.copyWith(
+            bodySmall: const TextStyle(color: Color.fromRGBO(20, 50, 50, 1)),
+            bodyMedium: const TextStyle(color: Color.fromRGBO(20, 50, 50, 1)),
+            titleMedium: const TextStyle(
+                fontSize: 20,
+                fontFamily: 'RobotoCondensed',
+                fontWeight: FontWeight.bold)),
       ),
-      home: const MyHomePage(),
+      // home: const MyHomePage(),
+      home: const CategoriesScreen(),
     );
   }
 }
@@ -33,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text('Meal App'),
       ),
+      // body: const CategoriesScreen(),
       body: null,
     );
   }
